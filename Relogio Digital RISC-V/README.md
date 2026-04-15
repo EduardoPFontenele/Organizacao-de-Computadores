@@ -25,6 +25,8 @@ O código está organizado em módulos funcionais para garantir a legibilidade e
 
 # Compilação e Execução
 Para compilar e rodar o projeto, utilize o toolchain do RISC-V e o QEMU:
+
+```bash
 # 1. Montagem dos objetos
 riscv64-unknown-elf-as -march=rv64imac_zicsr main.s -o main.o
 riscv64-unknown-elf-as -march=rv64imac_zicsr trap.s -o trap.o
@@ -35,3 +37,5 @@ riscv64-unknown-elf-ld -Ttext=0x80000000 --entry=_start main.o trap.o uart.o -o 
 
 # 3. Execução no QEMU
 qemu-system-riscv64 -machine virt -nographic -bios none -kernel main.elf
+
+```
