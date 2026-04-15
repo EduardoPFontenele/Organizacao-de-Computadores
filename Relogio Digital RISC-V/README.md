@@ -39,3 +39,8 @@ riscv64-unknown-elf-ld -Ttext=0x80000000 --entry=_start main.o trap.o uart.o -o 
 qemu-system-riscv64 -machine virt -nographic -bios none -kernel main.elf
 
 ```
+# Comandos de Operação
+Ao iniciar, o relógio começa em 00:00:00. Para ajustar a hora:
+1. Digite no terminal: T HH:MM:SS (ex: T 14:07:33)
+2. Pressione Enter.
+3. O sistema responderá com [OK] Horario atualizado! e o relógio seguirá a partir do novo valor.
